@@ -47,7 +47,6 @@ This template uses:
 - **Freshdesk Liquid** — Dynamic content and conditional logic
 - **Bootstrap-style classes** — Responsive layout and spacing
 - **SVG** — Custom inline icons
-- **Git/GitHub** — Version control and source management
 
 ---
 
