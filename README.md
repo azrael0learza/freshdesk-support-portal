@@ -1,10 +1,10 @@
-# 🎧 Freshdesk Support Portal
+# Freshdesk Support Portal
 
 > Custom Freshdesk Support Portal homepage template built with HTML, Freshdesk Liquid templating, Bootstrap-style classes, and inline SVG icons.
 
 ---
 
-## 📖 Overview
+## Overview
 
 This project contains the custom homepage template used for the **Freshdesk Support Portal**.
 
@@ -22,7 +22,7 @@ It provides a central support hub where users can:
 
 ---
 
-## 🖥️ Homepage Structure
+## Homepage Structure
 
 The homepage is organised into several sections:
 
