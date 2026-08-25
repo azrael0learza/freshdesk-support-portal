@@ -8,7 +8,7 @@
 
 This project contains the custom homepage template used for the **Freshdesk Support Portal**.
 
-The template combines standard **HTML markup** with **Freshdesk's Liquid-style templating syntax** to create a customised customer support experience.
+The template combines standard **HTML markup** with **Freshdesk's Liquid-style templating syntax** to create a customised customer support.
 
 It provides a central support hub where users can:
 
