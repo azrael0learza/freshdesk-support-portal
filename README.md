@@ -1,6 +1,6 @@
 # Freshdesk Support Portal - homepage template
 
-**[Live Preview Demo](https://azrael0learza.github.io/freshdesk-support-portal/preview/))**
+**[Live Preview Demo]((https://azrael0learza.github.io/freshdesk-support-portal/preview/))**
 
 Custom homepage template for a production Freshdesk support portal: a self-serve hub where customers search
 the knowledge base, read FAQs, browse solution categories and community forums, see popular articles and
