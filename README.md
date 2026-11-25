@@ -1,5 +1,6 @@
 # Freshdesk Support Portal - homepage template
 
+
 Custom homepage template for a production Freshdesk support portal: a self-serve hub where customers search
 the knowledge base, read FAQs, browse solution categories and community forums, see popular articles and
 trending discussions, and fall through to a ticket form when self-service does not solve the problem.
