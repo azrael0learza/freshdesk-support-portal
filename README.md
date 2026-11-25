@@ -12,7 +12,7 @@ the running result; this repository holds the homepage template behind it.
 ## What is in here
 
 ```text
-APM-FD-Portal/
+freshdesk-support-portal/
 ├── README.md
 ├── preview/
 │   └── index.html          standalone demo - open this in a browser
