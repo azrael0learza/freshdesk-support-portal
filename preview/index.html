@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Support Hub</title>
+
+  <style>
+    :root {
+      --primary: #114C80;
+      --primary-dark: #0b385f;
+      --text: #333;
+      --muted: #555;
+      --light-bg: #f5f7f9;
+      --white: #fff;
+      --border: #e2e6ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    .section-light {
+      background: var(--light-bg);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin: 20px 0 30px;
+    }
+
+    .section-heading h2,
+    .section-heading h3,
+    .section-heading h4 {
+      margin: 0 0 8px;
+      color: var(--primary);
+    }
+
+    .section-heading h2 {
+      font-size: 30px;
+    }
+
+    .section-heading h3 {
+      font-size: 24px;
+    }
+
+    .section-heading h4 {
+      font-size: 22px;
+    }
+
+    /* Search */
+    .search-section {
+      background: var(--primary);
+      padding: 45px 0 65px;
+    }
+
+    .search-container {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .search-container h1 {
+      color: white;
+      text-align: center;
+      margin: 0 0 20px;
+      font-size: 28px;
+    }
+
+    .search-box {
+      display: flex;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .search-box input {
+      flex: 1;
+      border: 0;
+      padding: 15px 18px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-box button {
+      border: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0 22px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .search-box button:hover {
+      background: var(--primary-dark);
+    }
+
+    #searchResults {
+      margin-top: 15px;
+      display: none;
+      background: white;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.12);
+    }
+
+    #searchResults a {
+      display: block;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #searchResults a:last-child {
+      border-bottom: 0;
+    }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      color: var(--text);
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .card:hover {
+      text-decoration: none;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.10);
+    }
+
+    .icon-holder {
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 20px;
+    }
+
+    .card-body {
+      padding: 18px 20px 22px;
+    }
+
+    .card-title {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .card-description {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      margin: 15px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .faq-list li {
+      margin-bottom: 8px;
+    }
+
+    /* Article / topic lists */
+    .article-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .article-item {
+      display: flex;
+      gap: 14px;
+      padding: 18px 15px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .article-item:hover {
+      background: rgba(17, 76, 128, .04);
+      text-decoration: none;
+    }
+
+    .article-icon {
+      flex: 0 0 28px;
+      font-size: 22px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .article-title {
+      margin: 0 0 5px;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .article-meta {
+      margin: 0;
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* Forum */
+    .forum-card {
+      padding: 22px;
+    }
+
+    .forum-card h3 {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .forum-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 20px;
+      background: #0b385f;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article-list {
+        grid-template-columns: 1fr;
+      }
+
+      .search-container h1 {
+        font-size: 24px;
+      }
+    }
+
+    @media (min-width: 801px) and (max-width: 1050px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       SEARCH / WELCOME SECTION
+       ========================================================= -->
+
+  <section class="search-section">
+    <div class="search-container">
+
+      <h1>How can we help?</h1>
+
+      <div class="search-box">
+        <input
+          type="search"
+          id="supportSearch"
+          placeholder="Search your support resources..."
+          aria-label="Search support resources"
+        >
+        <button type="button" onclick="searchResources()">
+          Search
+        </button>
+      </div>
+
+      <div id="searchResults"></div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       FREQUENTLY ASKED QUESTIONS
+       ========================================================= -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="grid">
+
+        <div class="card searchable"
+             data-search="frequently asked questions faq issue subscription technical help ios android">
+
+          <div class="icon-holder">
+
+            <!-- Category icon -->
+            <svg width="64" height="64" viewBox="0 0 64 64"
+                 aria-hidden="true">
+              <circle
+                cx="32"
+                cy="32"
+                r="25"
+                fill="#114C80"
+              />
+
+              <text
+                x="32"
+                y="41"
+                text-anchor="middle"
+                font-size="30"
+                font-weight="bold"
+                fill="white"
+              >?</text>
+            </svg>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-title">
+              <a
+                href="https://autismparenting.freshdesk.com/support/solutions/folders/4000040864"
+                aria-label="Frequently Asked Questions"
+              >
+                Frequently Asked Questions
+              </a>
+            </p>
+
+            <ul class="faq-list">
+
+              <li>
+                <a href="https://autismparenting.freshdesk.com/support/solutions/articles/4000085890-i-didn-t-receive-an-issue">
+                  I didn’t receive an issue
+                </a>
+              </li>
+
+              <li>
+                <a href="https://autismparenting.freshdesk.com/support/solutions/articles/149011-technical-help-ios-android-user">
+                  Technical Help - iOS/Android User
+                </a>
+              </li>
+
+              <li>
+                <a href="https://autismparenting.freshdesk.com/support/solutions/articles/4000214990-cancel-my-subscription">
+                  Cancel my subscription
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       SUPPORT HUB
+       ========================================================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Your Support Hub</h2>
+      </div>
+
+
+      <div class="grid">
+
+
+        <!-- Submit a Ticket -->
+
+        <a
+          class="card searchable"
+          data-search="submit ticket support ticket issue help contact support"
+          href="https://autismparenting.freshdesk.com/support/tickets/new"
+          aria-label="Submit a Ticket"
+        >
+
+          <div class="icon-holder">
+
+            <svg width="64" height="64" viewBox="0 0 64 64"
+                 aria-hidden="true">
+
+              <rect
+                x="8"
+                y="16"
+                width="48"
+                height="32"
+                rx="4"
+                fill="#114C80"
+              />
+
+              <polyline
+                points="8,16 32,36 56,16"
+                fill="none"
+                stroke="#fff"
+                stroke-width="3"
+              />
+
+            </svg>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-title">
+              Submit a Ticket
+            </p>
+
+            <p class="card-description">
+              Describe your issue by filling out the support ticket form.
+            </p>
+
+          </div>
+
+        </a>
+
+
+        <!-- Solutions -->
+
+        <a
+          class="card searchable"
+          data-search="solutions guides resources help articles knowledge base"
+          href="https://autismparenting.freshdesk.com/support/solutions"
+          aria-label="Solutions"
+        >
+
+          <div class="icon-holder">
+
+            <svg width="64" height="64" viewBox="0 0 64 64"
+                 aria-hidden="true">
+
+              <circle
+                cx="20.96"
+                cy="22.89"
+                r="7.95"
+                fill="#114C80"
+              />
+
+              <path
+                d="M5.05,51A15.91,15.91,0,0,1,22,35.12c8.45.55,14.84,8,14.84,16.42V55.8A3.18,3.18,0,0,1,33.68,59H8.23A3.18,3.18,0,0,1,5.05,55.8Z"
+                fill="#114C80"
+              />
+
+              <path
+                d="M37.86,23.4A11.63,11.63,0,1,1,40.38,26l-4,1.49Z"
+                stroke="#114C80"
+                stroke-width="2"
+                fill="none"
+              />
+
+              <line
+                x1="47.43"
+                y1="11.11"
+                x2="47.43"
+                y2="17.11"
+                stroke="#114C80"
+                stroke-width="2"
+              />
+
+              <line
+                x1="47.43"
+                y1="20.75"
+                x2="47.43"
+                y2="21.75"
+                stroke="#114C80"
+                stroke-width="2"
+              />
+
+            </svg>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-title">
+              Solutions
+            </p>
+
+            <p class="card-description">
+              Explore helpful guides and resources designed to assist you.
+            </p>
+
+          </div>
+
+        </a>
+
+
+        <!-- View All Articles -->
+
+        <a
+          class="card searchable"
+          data-search="articles all articles vat billing subscription information resources"
+          href="https://autismparenting.freshdesk.com/support/solutions/4000010473"
+          aria-label="View all articles"
+        >
+
+          <div class="icon-holder">
+
+            <svg width="64" height="64" viewBox="0 0 64 64"
+                 aria-hidden="true">
+
+              <circle
+                cx="32.05"
+                cy="30.65"
+                r="14.75"
+                fill="#114C80"
+              />
+
+              <line
+                x1="32"
+                y1="5.06"
+                x2="32"
+                y2="9.64"
+                stroke="#114C80"
+                stroke-width="2"
+              />
+
+              <line
+                x1="13.9"
+                y1="12.55"
+                x2="17.14"
+                y2="15.79"
+                stroke="#114C80"
+                stroke-width="2"
+              />
+
+              <line
+                x1="50.1"
+                y1="48.75"
+                x2="46.86"
+                y2="45.52"
+                stroke="#114C80"
+                stroke-width="2"
+              />
+
+              <line
+                x1="6.4"
+                y1="30.65"
+                x2="10.98"
+                y2="30.65"
+                stroke="#114C80"
+                stroke-width="2"
+              />
+
+              <line
+                x1="57.6"
+                y1="30.65"
+                x2="53.02"
+                y2="30.65"
+                stroke="#114C80"
+                stroke-width="2"
+              />
+
+              <line
+                x1="13.9"
+                y1="48.75"
+                x2="17.14"
+                y2="45.52"
+                stroke="#114C80"
+                stroke-width="2"
+              />
+
+              <line
+                x1="50.1"
+                y1="12.55"
+                x2="46.86"
+                y2="15.79"
+                stroke="#114C80"
+                stroke-width="2"
+              />
+
+            </svg>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-title">
+              View all articles
+            </p>
+
+            <p class="card-description">
+              Track all your ticket's progress and your interaction
+              with the support teams.
+            </p>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       FORUMS
+       ========================================================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>Forums</h2>
+
+        <a
+          href="https://autismparenting.freshdesk.com/support/discussions"
+        >
+          View topics
+        </a>
+
+      </div>
+
+
+      <div class="grid">
+
+        <!--
+          Freshdesk originally generated these dynamically from:
+
+          portal.forum_categories
+          category.forums
+          category.name
+          category.description
+          category.url
+
+          These are now static HTML entries.
+        -->
+
+        <a
+          class="card forum-card searchable"
+          data-search="forum community discussions topics"
+          href="https://autismparenting.freshdesk.com/support/discussions"
+        >
+
+          <h3>Community Discussions</h3>
+
+          <p>
+            Browse discussions and topics from the support community.
+          </p>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       POPULAR ARTICLES
+       ========================================================= -->
+
+  <section class="section section-light">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>Popular Articles</h2>
+
+        <a href="https://autismparenting.freshdesk.com/support/solutions">
+          View all articles
+        </a>
+
+      </div>
+
+
+      <div class="article-list">
+
+
+        <a
+          class="article-item searchable"
+          data-search="frequently asked questions faq"
+          href="https://autismparenting.freshdesk.com/support/solutions/folders/4000040864"
+        >
+
+          <div class="article-icon">📄</div>
+
+          <div>
+
+            <p class="article-title">
+              Frequently Asked Questions
+            </p>
+
+            <p class="article-meta">
+              Frequently requested support information
+            </p>
+
+          </div>
+
+        </a>
+
+
+        <a
+          class="article-item searchable"
+          data-search="didn't receive issue magazine issue delivery"
+          href="https://autismparenting.freshdesk.com/support/solutions/articles/4000085890-i-didn-t-receive-an-issue"
+        >
+
+          <div class="article-icon">📄</div>
+
+          <div>
+
+            <p class="article-title">
+              I didn’t receive an issue
+            </p>
+
+            <p class="article-meta">
+              Help with missing issues
+            </p>
+
+          </div>
+
+        </a>
+
+
+        <a
+          class="article-item searchable"
+          data-search="technical help ios android mobile phone app"
+          href="https://autismparenting.freshdesk.com/support/solutions/articles/149011-technical-help-ios-android-user"
+        >
+
+          <div class="article-icon">📄</div>
+
+          <div>
+
+            <p class="article-title">
+              Technical Help - iOS/Android User
+            </p>
+
+            <p class="article-meta">
+              Technical assistance for mobile users
+            </p>
+
+          </div>
+
+        </a>
+
+
+        <a
+          class="article-item searchable"
+          data-search="cancel subscription membership billing"
+          href="https://autismparenting.freshdesk.com/support/solutions/articles/4000214990-cancel-my-subscription"
+        >
+
+          <div class="article-icon">📄</div>
+
+          <div>
+
+            <p class="article-title">
+              Cancel my subscription
+            </p>
+
+            <p class="article-meta">
+              Information about cancelling your subscription
+            </p>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       TRENDING TOPICS
+       ========================================================= -->
+
+  <section class="section section-light">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>Trending Topics</h2>
+
+        <a
+          href="https://autismparenting.freshdesk.com/support/discussions"
+        >
+          View topics
+        </a>
+
+      </div>
+
+
+      <div class="article-list">
+
+        <a
+          class="article-item"
+          href="https://autismparenting.freshdesk.com/support/discussions"
+        >
+
+          <div class="article-icon">💬</div>
+
+          <div>
+
+            <p class="article-title">
+              Visit the Support Community
+            </p>
+
+            <p class="article-meta">
+              Browse the latest community discussions and topics.
+            </p>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer>
+
+    <p>
+      Need more help?
+      <a href="https://autismparenting.freshdesk.com/support/tickets/new">
+        Submit a support ticket
+      </a>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================================================
+       SEARCH JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+    function searchResources() {
+
+      const input =
+        document.getElementById("supportSearch");
+
+      const results =
+        document.getElementById("searchResults");
+
+      const query =
+        input.value.trim().toLowerCase();
+
+      const items =
+        document.querySelectorAll(".searchable");
+
+      results.innerHTML = "";
+
+      if (!query) {
+
+        results.style.display = "none";
+
+        items.forEach(function(item) {
+          item.classList.remove("hidden");
+        });
+
+        return;
+      }
+
+
+      let found = 0;
+
+
+      items.forEach(function(item) {
+
+        const searchText =
+          (
+            item.innerText +
+            " " +
+            (item.dataset.search || "")
+          ).toLowerCase();
+
+        if (searchText.includes(query)) {
+
+          item.classList.remove("hidden");
+
+          const link =
+            item.querySelector("a") || item;
+
+          const href =
+            item.getAttribute("href") ||
+            link.getAttribute("href");
+
+          const titleElement =
+            item.querySelector(".card-title, .article-title, h3");
+
+          const title =
+            titleElement
+              ? titleElement.innerText
+              : item.innerText.trim().split("\n")[0];
+
+          if (href) {
+
+            const resultLink =
+              document.createElement("a");
+
+            resultLink.href = href;
+            resultLink.textContent = title;
+
+            results.appendChild(resultLink);
+
+            found++;
+          }
+
+        } else {
+
+          item.classList.add("hidden");
+
+        }
+
+      });
+
+
+      if (found > 0) {
+
+        results.style.display = "block";
+
+      } else {
+
+        results.innerHTML =
+          "<div style='padding:12px;color:#555;'>No matching resources found.</div>";
+
+        results.style.display = "block";
+
+      }
+
+    }
+
+
+    /* Search while typing */
+
+    document
+      .getElementById("supportSearch")
+      .addEventListener("input", searchResources);
+
+
+    /* Allow Enter to search */
+
+    document
+      .getElementById("supportSearch")
+      .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+          searchResources();
+        }
+
+      });
+
+  </script>
+
+</body>
+</html>
