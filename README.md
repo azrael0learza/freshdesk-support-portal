@@ -6,7 +6,7 @@ Custom homepage template for a production Freshdesk support portal: a self-serve
 the knowledge base, read FAQs, browse solution categories and community forums, see popular articles and
 trending discussions, and fall through to a ticket form when self-service does not solve the problem.
 
-Built and maintained by me for Autism Parenting Magazine. The live portal is at
+Built and maintained by me for APM. The live portal is at
 [APM freshdesk](https://autismparenting.freshdesk.com/support/home) - that is
 the running result; this repository holds the homepage template behind it.
 
