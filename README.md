@@ -13,7 +13,7 @@ the running result; this repository holds the homepage template behind it.
 ## What is in here
 
 ```text
-freshdesk-support-portal/
+Freshdesk-Support-Portal/
 ├── README.md
 ├── preview/
 │   └── index.html          standalone demo - open this in a browser
